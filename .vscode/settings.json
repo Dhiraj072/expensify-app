@@ -1,0 +1,4 @@
+{
+    "eslint.enable": true,
+    "jest.pathToConfig": "jest.config.json",
+}
