@@ -82,7 +82,7 @@ test('should call onsubmit with correct values for valid for submisson', () => {
     expect(wrapper.state('error')).toBeUndefined();
     expect(onSubmitSpy).toHaveBeenCalledWith({
         description: value,
-        amount: expenses[0].amount / 10,
+        amount: expenses[0].amount,
         createdAt: expenses[0].createdAt,
         note: undefined,
     });
