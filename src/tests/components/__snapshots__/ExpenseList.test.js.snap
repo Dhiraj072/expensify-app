@@ -17,6 +17,7 @@ exports[`should render expenselist with given expenses 1`] = `
         "createdAt": 0,
         "description": "test expense 1",
         "id": "1",
+        "note": "test note 1",
       }
     }
     key="1"
@@ -28,6 +29,7 @@ exports[`should render expenselist with given expenses 1`] = `
         "createdAt": -345600000,
         "description": "test expense 2",
         "id": "2",
+        "note": "test note 2",
       }
     }
     key="2"
@@ -39,6 +41,7 @@ exports[`should render expenselist with given expenses 1`] = `
         "createdAt": 345600000,
         "description": "test expense 3",
         "id": "3",
+        "note": "test note 3",
       }
     }
     key="3"

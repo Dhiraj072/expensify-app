@@ -96,6 +96,7 @@ exports[`should not set amount for invalid amount value 1`] = `
     <textarea
       onChange={[Function]}
       placeholder="Add note (optional)"
+      value="test note 1"
     />
     <button
       type="submit"
@@ -202,6 +203,7 @@ exports[`should not set amount for invalid amount value 2`] = `
     <textarea
       onChange={[Function]}
       placeholder="Add note (optional)"
+      value="test note 1"
     />
     <button
       type="submit"
@@ -415,6 +417,7 @@ exports[`should render ExpenseForm with expense data 1`] = `
     <textarea
       onChange={[Function]}
       placeholder="Add note (optional)"
+      value="test note 1"
     />
     <button
       type="submit"
@@ -738,6 +741,7 @@ exports[`should set amount when input changes 1`] = `
     <textarea
       onChange={[Function]}
       placeholder="Add note (optional)"
+      value="test note 1"
     />
     <button
       type="submit"
@@ -844,6 +848,7 @@ exports[`should set amount when input changes 2`] = `
     <textarea
       onChange={[Function]}
       placeholder="Add note (optional)"
+      value="test note 1"
     />
     <button
       type="submit"
@@ -950,6 +955,7 @@ exports[`should set description when input changes 1`] = `
     <textarea
       onChange={[Function]}
       placeholder="Add note (optional)"
+      value="test note 1"
     />
     <button
       type="submit"
@@ -1056,6 +1062,7 @@ exports[`should set description when input changes 2`] = `
     <textarea
       onChange={[Function]}
       placeholder="Add note (optional)"
+      value="test note 1"
     />
     <button
       type="submit"
@@ -1162,6 +1169,7 @@ exports[`should set note when input changes 1`] = `
     <textarea
       onChange={[Function]}
       placeholder="Add note (optional)"
+      value="test note 1"
     />
     <button
       type="submit"

@@ -84,7 +84,7 @@ test('should call onsubmit with correct values for valid for submisson', () => {
         description: value,
         amount: expenses[0].amount,
         createdAt: expenses[0].createdAt,
-        note: undefined,
+        note: 'test note 1',
     });
 });
 
