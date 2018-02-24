@@ -7,6 +7,8 @@ import database from '../../firebase/firebase';
 const createMockStore = configureMockStore([thunk]);
 const expense = expenses[0];
 const expensesData = [];
+const uid = '12345';
+const defaultAuthState = { auth: { uid } };
 
 beforeEach((done) => {
     expenses.forEach(({
@@ -16,7 +18,7 @@ beforeEach((done) => {
             description, amount, createdAt, note,
         };
     });
-    database.ref('expenses').set(expensesData).then(() => done());
+    database.ref(`users/${uid}/expenses`).set(expensesData).then(() => done());
 });
 
 test('should setup remove expense action object', () => {
@@ -46,7 +48,7 @@ test('should setup add expense action object', () => {
 });
 
 test('should add expense to database and store', (done) => {
-    const store = createMockStore({});
+    const store = createMockStore(defaultAuthState);
     const expenseData = {
         description: 'test',
         note: 'test',
@@ -65,7 +67,7 @@ test('should add expense to database and store', (done) => {
             });
             // Return a promise so we can chain -> then below
             // with the snapshot containing the latest expense added in firebase
-            return database.ref(`expenses/${actions[0].expense.id}`).once('value');
+            return database.ref(`users/${uid}/expenses/${actions[0].expense.id}`).once('value');
         })
         .then((snapshot) => {
             expect(snapshot.val()).toEqual(expenseData);
@@ -74,7 +76,7 @@ test('should add expense to database and store', (done) => {
 });
 
 test('should add expense to database and store with default values', (done) => {
-    const store = createMockStore({});
+    const store = createMockStore(defaultAuthState);
     const defaultExpenseData = {
         description: '',
         note: '',
@@ -92,7 +94,7 @@ test('should add expense to database and store with default values', (done) => {
                 },
             });
             // Return a promise so we can chain -> then below
-            return database.ref(`expenses/${actions[0].expense.id}`).once('value');
+            return database.ref(`users/${uid}/expenses/${actions[0].expense.id}`).once('value');
         })
         .then((snapshot) => {
             expect(snapshot.val()).toEqual(defaultExpenseData);
@@ -109,7 +111,7 @@ test('should set expenses object with data', () => {
 });
 
 test('should fetch the expenses from firebase', (done) => {
-    const store = createMockStore({});
+    const store = createMockStore(defaultAuthState);
     store.dispatch(startSetExpenses())
         .then(() => {
             const actions = store.getActions();
@@ -122,7 +124,7 @@ test('should fetch the expenses from firebase', (done) => {
 });
 
 test('should remove an expense from the database', (done) => {
-    const store = createMockStore({});
+    const store = createMockStore(defaultAuthState);
     const id = expense.id;
     store.dispatch(startRemoveExpense(id))
         .then(() => {
@@ -131,7 +133,7 @@ test('should remove an expense from the database', (done) => {
                 type: 'REMOVE_EXPENSE',
                 id,
             });
-            return database.ref(`expenses/${id}`).once('value');
+            return database.ref(`users/${uid}/expenses/${id}`).once('value');
         })
         .then((snapshot) => {
             expect(snapshot.val()).toBeNull();
@@ -140,7 +142,7 @@ test('should remove an expense from the database', (done) => {
 });
 
 test('should edit an expense on firebase', (done) => {
-    const store = createMockStore({});
+    const store = createMockStore(defaultAuthState);
     const id = '1';
     const expenseData = expensesData[id];
     const updates = { description: 'updated test expense 1' };
@@ -152,7 +154,7 @@ test('should edit an expense on firebase', (done) => {
                 id,
                 updates,
             });
-            return database.ref(`expenses/${id}`).once('value');
+            return database.ref(`users/${uid}/expenses/${id}`).once('value');
         }).then((snapshot) => {
             expect(snapshot.val().description).toEqual(updates.description);
             done();
