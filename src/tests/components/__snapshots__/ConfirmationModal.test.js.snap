@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render Confirmation Modal correctly 1`] = `
+<Modal
+  ariaHideApp={true}
+  bodyOpenClassName="ReactModal__Body--open"
+  className="modal"
+  closeTimeoutMS={300}
+  contentLabel="Remove expense confirmation"
+  isOpen={true}
+  parentSelector={[Function]}
+  portalClassName="ReactModalPortal"
+  shouldCloseOnOverlayClick={true}
+>
+  <div>
+    <p>
+      Remove expense?
+    </p>
+    <button
+      className="button button--margin"
+      onClick={[Function]}
+      value="yes"
+    >
+      Yes
+    </button>
+    <button
+      className="button button--margin"
+      onClick={[Function]}
+      value="no"
+    >
+      No
+    </button>
+  </div>
+</Modal>
+`;

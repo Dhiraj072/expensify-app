@@ -1,17 +1,32 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import ExpenseForm from './ExpenseForm';
+import ConfirmationModal from './ConfirmationModal';
 import { startEditExpense, startRemoveExpense } from '../actions/expenses';
 
 export class EditExpensePage extends React.Component {
+    constructor() {
+        super();
+        this.state = {
+            isModalOpen: false,
+        };
+    }
     onSubmit = (expense) => {
         this.props.startEditExpense(this.props.expense.id, expense);
         this.props.history.push('/');
     };
     onClick = () => {
-        this.props.startRemoveExpense(this.props.expense.id);
-        this.props.history.push('/');
-    }
+        this.setState(() => ({ isModalOpen: true }));
+    };
+    handleRemoveExpenseConfirmation = (e) => {
+        e.preventDefault();
+        const removeExpense = e.target.value;
+        if (removeExpense === 'yes') {
+            this.props.startRemoveExpense(this.props.expense.id);
+            this.props.history.push('/');
+        }
+        this.setState(() => ({ isModalOpen: false }));
+    };
     render() {
         return (
             <div>
@@ -26,6 +41,10 @@ export class EditExpensePage extends React.Component {
                         Remove Expense
                     </button>
                 </div>
+                <ConfirmationModal
+                    isModalOpen={this.state.isModalOpen}
+                    handleConfirmation={this.handleRemoveExpenseConfirmation}
+                />
             </div>
         );
     }

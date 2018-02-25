@@ -33,5 +33,15 @@ test('should handle edit expense', () => {
 
 test('should handle remove expense', () => {
     wrapper.find('button').simulate('click');
-    expect(startRemoveExpense).toHaveBeenLastCalledWith(expense.id);
+    expect(wrapper.state('isModalOpen')).toBe(true);
+});
+
+test('should handle remove', () => {
+    wrapper.instance().handleRemoveExpenseConfirmation({
+        preventDefault: () => {},
+        target: { value: 'yes' },
+    });
+    expect(startRemoveExpense).toHaveBeenCalledWith(expense.id);
+    expect(history.push).toHaveBeenCalledWith('/');
+    expect(wrapper.state('isModalOpen')).toBe(false);
 });
