@@ -1,0 +1,18 @@
+header {
+    background: $orange;
+}
+
+.header__title {
+    color: $off-white;
+    padding: $l-size 0;
+    text-decoration: none;
+    h1 {
+        margin: 0;
+    };
+}
+
+.header__content {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
