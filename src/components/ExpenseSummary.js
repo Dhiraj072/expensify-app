@@ -11,10 +11,16 @@ export const ExpSummary = (props) => (
         <div className="content-container">
             <h2 className="page-header__title">
                 Viewing
-                <span> {props.numExpenses} </span>
+                <span> {props.numVisibleExpenses} </span>
                 expenses totalling
                 <span> {numeral(props.expenseTotal / 100).format('$0,0.00')}</span>
             </h2>
+            <h4>
+                <span>{props.numVisibleExpenses} </span>
+                out of total
+                <span> {props.numExpenses} </span>
+                expenses displayed
+            </h4>
             <div className="page-header__actions">
                 <Link className="button" to="/create">Add Expense</Link>
             </div>
@@ -25,8 +31,9 @@ export const ExpSummary = (props) => (
 const mapStateToProps = (state) => {
     const visibleExpenses = selectExpenses(state.expenses, state.filters);
     return {
-        numExpenses: visibleExpenses.length,
+        numVisibleExpenses: visibleExpenses.length,
         expenseTotal: selectExpenseTotal(visibleExpenses),
+        numExpenses: state.expenses.length,
     };
 };
 

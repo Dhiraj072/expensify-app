@@ -97,21 +97,21 @@ const filtersReducer = (state = filtersReducerDefaultState, action) => {
 };
 
 // Get visible expenses
-const getVisibleExpenses = (expenses, { startDate, endDate, text, sortBy }) => {
-    return expenses.filter((expense) => {
-        const startDateMatch = typeof startDate !== 'number' || expense.createdAt >= startDate;
-        const endDateMatch = typeof endDate !== 'number' || expense.createdAt <= endDate;
-        const testMatch = expense.description.toLowerCase().includes(text.toLowerCase());
-        return startDateMatch && endDateMatch && testMatch;
-    }).sort((a, b) => {
-        if (sortBy === 'date') {
-            return a.createdAt < b.createdAt ? 1 : -1;
-        } else if (sortBy === 'amount') {
-            console.log("amount");
-            return a.amount < b.amount ? 1 : -1;
-        }
-    });
-};
+const getVisibleExpenses = (expenses, {
+    startDate, endDate, text, sortBy,
+}) => expenses.filter((expense) => {
+    const startDateMatch = typeof startDate !== 'number' || expense.createdAt >= startDate;
+    const endDateMatch = typeof endDate !== 'number' || expense.createdAt <= endDate;
+    const testMatch = expense.description.toLowerCase().includes(text.toLowerCase());
+    return startDateMatch && endDateMatch && testMatch;
+}).sort((a, b) => {
+    if (sortBy === 'date') {
+        return a.createdAt < b.createdAt ? 1 : -1;
+    } else if (sortBy === 'amount') {
+        console.log('amount');
+        return a.amount < b.amount ? 1 : -1;
+    }
+});
 
 // Store creation
 const store = createStore(combineReducers({

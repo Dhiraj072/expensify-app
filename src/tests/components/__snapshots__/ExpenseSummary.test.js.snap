@@ -13,7 +13,7 @@ exports[`should render ExpenseSummary with given expenses 1`] = `
       Viewing
       <span>
          
-        3
+        6
          
       </span>
       expenses totalling
@@ -22,6 +22,19 @@ exports[`should render ExpenseSummary with given expenses 1`] = `
         $1.00
       </span>
     </h2>
+    <h4>
+      <span>
+        6
+         
+      </span>
+      out of total
+      <span>
+         
+        3
+         
+      </span>
+      expenses displayed
+    </h4>
     <div
       className="page-header__actions"
     >

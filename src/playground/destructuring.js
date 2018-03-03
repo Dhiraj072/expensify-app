@@ -20,6 +20,6 @@
 
 // const address = ['1299', 'Penn', 'USA'];
 const address = [];
-const [street = '44', city, ] = address;
+const [street = '44', city] = address;
 
 console.log(street);

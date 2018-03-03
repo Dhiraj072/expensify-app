@@ -13,7 +13,7 @@ export default [
         description: 'test expense 2',
         amount: 200,
         createdAt: moment(0).subtract(4, 'days').valueOf(),
-        note: 'test note 2',        
+        note: 'test note 2',
     },
     {
         id: '3',

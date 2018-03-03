@@ -10,14 +10,14 @@ console.log('before');
 // catch like this //
 promise.then((data) => {
     console.log(data);
-}).catch((error) => {        
-    console.log('Error: ' + error);
+}).catch((error) => {
+    console.log(`Error: ${error}`);
 });
 
 // or catch like this //
 // promise.then((data) => {
 //     console.log(data);
-// }, (error) => {        
+// }, (error) => {
 //     console.log('Error: ' + error);
 // });
 
