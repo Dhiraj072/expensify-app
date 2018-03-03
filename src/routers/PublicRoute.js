@@ -2,7 +2,7 @@ import React from 'react';
 import { Route, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-export const PublicRoute = ({
+const PublicRoute = ({
     isAuthenticated,
     component: Component,
     ...rest

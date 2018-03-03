@@ -125,7 +125,7 @@ test('should fetch the expenses from firebase', (done) => {
 
 test('should remove an expense from the database', (done) => {
     const store = createMockStore(defaultAuthState);
-    const id = expense.id;
+    const { id } = expense;
     store.dispatch(startRemoveExpense(id))
         .then(() => {
             const actions = store.getActions();
@@ -144,7 +144,6 @@ test('should remove an expense from the database', (done) => {
 test('should edit an expense on firebase', (done) => {
     const store = createMockStore(defaultAuthState);
     const id = '1';
-    const expenseData = expensesData[id];
     const updates = { description: 'updated test expense 1' };
     store.dispatch(startEditExpense(id, updates))
         .then(() => {

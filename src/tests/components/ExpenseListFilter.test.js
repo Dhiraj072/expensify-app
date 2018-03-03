@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import moment from 'moment';
-import { ExpenseListFilter } from '../../components/ExpenseListFilter';
+import { ExpListFilter } from '../../components/ExpenseListFilter';
 
 let setStartDate;
 let setEndDate;
@@ -23,7 +23,7 @@ beforeEach(() => {
     sortByAmount = jest.fn();
     sortByDate = jest.fn();
     setTextFilter = jest.fn();
-    wrapper = shallow(<ExpenseListFilter
+    wrapper = shallow(<ExpListFilter
         setStartDate={setStartDate}
         setEndDate={setEndDate}
         sortByAmount={sortByAmount}

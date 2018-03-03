@@ -17,7 +17,7 @@
     "indent": ["warn", 4],
     "arrow-parens": ["warn", "always"],
     "jsx-a11y/anchor-is-valid": [ "error", {
-            "components": [ "Link"],
+          "components": [ "Link"],
           "specialLink": [
             "hrefLeft",
             "hrefRight",
@@ -33,6 +33,12 @@
     "react/prop-types": "off",
     "no-alert": "off",
     "no-empty": "off",
-    "consistent-return": "off"
+    "consistent-return": "off",
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": true
+      }
+    ]
   }
 }

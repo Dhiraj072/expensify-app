@@ -4,7 +4,7 @@ import ExpenseForm from './ExpenseForm';
 import ConfirmationModal from './ConfirmationModal';
 import { startEditExpense, startRemoveExpense } from '../actions/expenses';
 
-export class EditExpensePage extends React.Component {
+export class EditExpPage extends React.Component {
     constructor() {
         super();
         this.state = {
@@ -59,4 +59,4 @@ const mapDispatchToProps = (dispatch) => ({
     startRemoveExpense: (id) => dispatch(startRemoveExpense(id)),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(EditExpensePage);
+export default connect(mapStateToProps, mapDispatchToProps)(EditExpPage);
