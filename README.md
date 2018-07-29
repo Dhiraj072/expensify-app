@@ -1,7 +1,7 @@
 # Expensify-App
 
 A web application to track your expenses. 
-Demo application is running live [here](https://your-expense-tracker.herokuapp.com/)
+Demo application is running live [here](https://your-expense-tracker.herokuapp.com/).
 
 ## Getting Started
 
@@ -11,7 +11,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 * Yarn v1.3.2 - Installation instructions [here](https://yarnpkg.com/lang/en/docs/install/)
 * Node v8.9.3 - Installation instructions [here](https://nodejs.org/en/download/package-manager/)
-* Firebase project - Helpful if you are familiar with using firebase. Read [setting up firebase for your project] https://firebase.google.com/docs/web/setup
+* Firebase project - Helpful if you are familiar with using firebase. Read [setting up firebase for your project](https://firebase.google.com/docs/web/setup)
 
 ### Installing
 
@@ -23,12 +23,6 @@ $ cd expensify-app
 ```
 
 Install packages
-
-```
-$ yarn install
-```
-
-Run dev server
 
 ```
 $ yarn install
@@ -67,7 +61,7 @@ Finally, access the application at http://localhost:8081/
 * [Yarn](https://yarnpkg.com/en/) - Dependency Management
 * [Webpack](https://webpack.js.org/) - Module bundler
 * [Jest](https://jestjs.io/) - Testing framework
-* [Firebase](https://firebase.google.com/) - Databse
+* [Firebase](https://firebase.google.com/) - Database
 
 ## Authors
 
