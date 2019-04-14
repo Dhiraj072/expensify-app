@@ -1,7 +1,7 @@
 # Expensify-App
 
 A web application to track your expenses. 
-Demo application is running live [here](https://your-expense-tracker.herokuapp.com/).
+Demo application is running live [here](https://your-expense-tracker.herokuapp.com/). Please allow application 30-60 seconds to start up. I'm not rich, hence the server auto-sleeps after 30mins of inactivity and saves me money.
 
 ## Getting Started
 
