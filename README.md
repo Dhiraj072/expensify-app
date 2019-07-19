@@ -3,6 +3,8 @@
 A web application to track your expenses. 
 Demo application is running live [here](https://your-expense-tracker.herokuapp.com/).
 
+**Note:** *(Please allow application 30-60 seconds to start up. I'm not rich, hence the server auto-sleeps after 30mins of inactivity and saves me money!)*
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine.
